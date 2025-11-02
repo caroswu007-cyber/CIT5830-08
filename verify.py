@@ -6,7 +6,7 @@ import random
 def sign_challenge(challenge):
     w3 = Web3()
 
-    # 把下面这一行替换为你的私钥（0x + 64 位十六进制）
+
     sk = "0x2636feb609bc58bafc604deb0256ac7c607607e93179b15efbd5f431576a096b"
 
     acct = w3.eth.account.from_key(sk)
@@ -15,7 +15,7 @@ def sign_challenge(challenge):
 
 
 def verify_sig():
-    # 生成随机挑战并验证恢复地址是否等于签名者地址
+
     challenge_bytes = random.randbytes(32)
     challenge = encode_defunct(challenge_bytes)
     address, sig = sign_challenge(challenge)
